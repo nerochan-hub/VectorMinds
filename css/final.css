@@ -295,9 +295,179 @@ label {
     font-size: 1.8rem;
   }
   .header-title{
-    max-height: 100%;
+    padding: 300px 275px 400px 10px;
   }
   .bg2{
-    max-height: 100%;
+   t
   }
+}
+@media (max-width: 768px) {
+    /* Adjust body font size for readability */
+    body {
+        font-size: 14px; /* Slightly smaller base font size */
+    }
+
+    /* Reduce padding/margin on main containers to utilize space better */
+    .header-title {
+        padding: 100px 20px 100px 20px; /* Reduced vertical and horizontal padding */
+        text-align: center; /* Center align text on smaller screens */
+    }
+
+    /* Center forms on smaller screens, remove fixed margins */
+    .header-form {
+        margin: 2rem auto; /* Center horizontally with auto margins */
+        max-width: 90%; /* Allow form to take more width */
+        padding: 0.8rem; /* Slightly reduced padding */
+    }
+
+    /* Ensure form controls take full width on smaller screens */
+    .form-control {
+        width: 90%; /* Almost full width for input fields */
+    }
+
+    /* Adjust button size for better tap target */
+    .btn {
+        padding: 0.6rem 0.5rem; /* Larger padding for easier tapping */
+        width: 120px; /* Wider button */
+    }
+}
+
+
+/* --- Navbar Specific Adjustments (e.g., Hamburger Menu for <960px) --- */
+@media (max-width: 960px) {
+    /* Hide desktop navigation elements */
+    .navbar .flex {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    /* Hide standard nav links and login/signup */
+    .nav-items, .signup, .vl, .login {
+        display: none;
+    }
+
+    /* Display the hamburger menu button */
+    #navbar-show-btn {
+        display: block; /* Make the hamburger button visible */
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        font-size: 1.8rem;
+        align-self: flex-end; /* Align to the end of the flex container */
+    }
+
+    /* Adjust navbar branding */
+    .site-brand {
+        margin-left: 1rem; /* Add some left margin */
+        padding-top: 0.5rem;
+    }
+
+    /* Ensure the mobile collapse menu is styled correctly */
+    .navbar-collapse {
+        width: 250px; /* Narrower sidebar menu */
+        /* Make sure it's hidden by default and slides in */
+        transform: translateX(100%); /* Hidden off-screen */
+        top: 0;
+        right: 0;
+        height: 100%;
+        position: fixed;
+        z-index: 1000; /* Ensure it's above other content */
+        box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+    }
+
+    /* Style for the active (shown) mobile menu */
+    #navbar-collapse-rmw {
+        transform: translateX(0) !important; /* Overrides transform to show menu */
+    }
+
+    /* Adjust the close button position within the mobile menu */
+    #navbar-close-btn {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        padding: 0.5rem; /* Reduced padding */
+        font-size: 1.5rem;
+        text-align: center;
+        width: auto;
+        height: auto;
+        border-radius: 50%; /* Make it round */
+        line-height: 1; /* Adjust line height for icon centering */
+        padding-left: initial; /* Reset padding-left from desktop style */
+    }
+
+    /* Adjust nav-items within the collapsed menu */
+    .navbar-collapse .nav-items {
+        display: flex; /* Display items as a flex column */
+        flex-direction: column;
+        padding: 2rem 1rem; /* Add some padding */
+        margin: 0;
+    }
+
+    .navbar-collapse .nav-link {
+        padding: 0.8rem 1rem; /* Padding for individual links */
+        display: block; /* Make links block level */
+        border-bottom: 1px solid rgba(255,255,255,0.1); /* Separator */
+    }
+
+    .navbar-collapse .nav-link:hover {
+        background-color: rgba(0,0,0,0.1);
+    }
+
+    /* Re-introduce login/signup for mobile menu if desired */
+    .navbar-collapse .signup, .navbar-collapse .login {
+        display: block;
+        position: static; /* Remove absolute positioning */
+        padding: 0.8rem 1rem;
+        color: var(--bg1);
+    }
+
+    .navbar-collapse .vl {
+        display: none; /* Hide vertical line in mobile menu */
+    }
+
+    /* Ensure search bar is responsive */
+    .search {
+        justify-content: center; /* Center search bar on smaller screens */
+        padding-right: 0;
+        padding-top: 1rem; /* Reduced top padding */
+    }
+
+    .search-bar {
+        width: 90%; /* Make search bar wider */
+        max-width: 300px; /* Limit max width */
+    }
+}
+
+/* --- Extra Small Mobile Devices (e.g., phones in portrait, <480px) --- */
+@media (max-width: 480px) {
+    body {
+        font-size: 13px; /* Even smaller base font size */
+    }
+
+    .header-title {
+        padding: 80px 15px 80px 15px; /* Further reduce padding */
+    }
+
+    .header-form {
+        max-width: 95%; /* Almost full width */
+        margin-left: auto; /* Ensure centering */
+        margin-right: auto;
+    }
+
+    .form-control {
+        width: 95%; /* Even wider form controls */
+    }
+
+    /* Hide the default navbar logo/brand completely if a separate mobile logo is used,
+       or significantly shrink it if it's still needed.
+       For this example, we assume `site-brand` might have an image or text
+       that needs adjustment. If it's just text, it might naturally fit. */
+    .site-brand img { /* If site-brand contains an image */
+        max-width: 80%;
+        height: auto;
+    }
+
+    .search-bar {
+        width: 95%; /* Almost full width for search bar */
+    }
 }
