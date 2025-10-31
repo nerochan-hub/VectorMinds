@@ -1,40 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VectorMinds</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://api.fontshare.com/v2/css?f[]=erode@600&f[]=hind@400&f[]=chubbo@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/final.css" />
-</head>
-<body>
-    <nav class="navbar">
-        
-        <div class="container flex">
-            <a href="index.html" class="site-brand">
-                <img src="img/logo.png">
-            </a>
-            <a href="#" class="signup"><i class="fa-solid fa-user-plus"></i>Signup</a>
-            <span class="vl">|</span>
-            <a href="#" class="login"><i class="fa-solid fa-right-to-bracket"></i>Login</a>
-            <button type="button" id="navbar-show-btn" class="flex">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-    </nav>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>VectorMinds</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href="https://api.fontshare.com/v2/css?f[]=erode@600&f[]=hind@400&f[]=chubbo@700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/final.css" />
+    </head>
+
+    <body>
+        <nav class="navbar">
+            <div class="container flex">
+                <a href="index.html" class="site-brand">
+                    <img src="img/logo.png">
+                </a>
+                <a href="#" class="signup">
+                    <i class="fa-solid fa-user-plus"></i>Signup
+                </a>
+                <span class="vl">|</span>
+                <a href="#" class="login">
+                    <i class="fa-solid fa-right-to-bracket"></i>Login
+                </a>
+                <button type="button"id="navbar-show-btn" class="flex">
+                    <i class="fas fa-bars"></i>
+                </button>
+            
+                <div class="navbar-collapse" id="navbar-collapse">
+                    <button type="button" id="navbar-close-btn" class="flex" style="border: none;">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <ul class="navbar-nav">
+                        <li class="nav-items">
+                            <i class="fas fa-house"></i>
+                            <a href="index.html" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-items">
+                            <i class="fas fa-user"></i>
+                            <a href="#" class="nav-link">Profile</a>
+                        </li>
+                        <li class="nav-items">
+                            <i class="fas fa-heart"></i>
+                            <a href="#" class="nav-link">Your Interests</a>
+                        </li>
+                        <li class="nav-items">
+                            <i class="fas fa-address-card"></i>
+                            <a href="#" class="nav-link">About</a>
+                        </li>
+                        <li class="nav-items">
+                            <i class="fas fa-comment"></i>
+                            <a href="#" class="nav-link">Need Help?</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     
-    <header class="flex">
+    
         <div class="banner">
             <div class="ht">
                 <h2>Finding Internships made easy!</h2>
-                <div class="scroll-down">&#8595;</div>
                 <h3>Fill a Quick form to get curated internships or search for more</h3>
             </div>
-            <div class="header-title"></div>
-                <h1>Once step CLOSER to your DREAM ;)</h1>
+        </div>
+        <div class="scroll">
+                <div class="scroll-down">&#8595;</div>
+        </div> 
+        <div class="head">
+            <div class="header-title">
+                <h1>One step CLOSER to your DREAM ;)</h1>
                 <p>Got the skills but stressing over internships? Relax — we’ve got your back</p>
                 <p>You bring the talent, we’ll bring the internship! it’s a perfect match <i class="fa-regular fa-face-smile-wink"></i></p>
+            </div>
                 <div class="search">
                 <form action="#" class="search-bar">
                     <input type="text" placeholder="internships near you..." >
@@ -42,11 +80,10 @@
                         <a href="#"><i class="fas fa-search"></i></a>
                     </button>
                 </form>
-            </div>
-            
+            </div>  
         </div>
             
-            <div class="bg2">
+        <div class="bg2">
             <div class="header-form">
                 <h2>Tell us a bit about you, and let's get rolling!</h2>
                 <form class="forms">
@@ -66,43 +103,10 @@
                     </select><br>
                     <label>Period of month</label>
                     <input type="number" class="form-control" placeholder="months" max="3" min="1"><br>
-
                     <button type="button" class="btn" value="search">Search</button>
-
                 </form>
             </div>
-            </div>
         </div>
-        <div class="navbar-collapse">
-                <button type="button" id="navbar-close-btn" class="flex" style="border: none;">
-                    <i class="fas fa-times"></i>
-                </button>
-                <ul class="navbar-nav">
-                    <li class="nav-items"><i class="fas fa-house"></i>
-                        <a href="index.html" class="nav-link">Home</a>
-                    </li>
-                    <li class="nav-items"><i class="fas fa-user"></i>
-                        <a href="#" class="nav-link">Profile</a>
-                    </li>
-                    <li class="nav-items"><i class="fas fa-heart"></i>
-                        <a href="#" class="nav-link">Your Interests</a>
-                    </li>
-                    <li class="nav-items"><i class="fas fa-address-card"></i>
-                        <a href="#" class="nav-link">About</a>
-                    </li>
-                    <li class="nav-items"><i class="fas fa-comment"></i>
-                        <a href="#" class="nav-link">Need Help?</a>
-                    </li>
-                </ul>
-            </div>
-    </header>
-    <script>
-  document.querySelector('.scroll-down').addEventListener('click', () => {
-    window.scrollBy({
-      top: window.innerHeight,
-      behavior: 'smooth'
-    });
-  });
-</script>
-</body>
+        <script src="js/script.js"></script>
+    </body>
 </html>
