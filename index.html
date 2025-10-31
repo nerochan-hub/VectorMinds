@@ -3,51 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcme|VectorMinds</title>
-    <link rel="stylesheet" href="css/box.css"/>
+    <title>VectorMinds</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://api.fontshare.com/v2/css?f[]=erode@600&f[]=hind@400&f[]=chubbo@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/final.css" />
 </head>
 <body>
     <nav class="navbar">
-        <div class="hero">
-            <div class="main-logo" >
-                <div>
-                    <img src="img/mainlogo.png" alt="main-logo" style="height: 65px;">
-                </div>
-            </div>
-            <div class="space"></div>
-            <div class="log">
-                <a href="#" class="name">Signup</a>
-            </div>
-            <div class="vl">
-                <p>|</p>
-            </div>
-            <div class="log">
-                <a href="#" class="name">Login</a>
-            </div>
-            
-            <div class="toggle">
-                <div class="menu">
-                    <button class="toggle-btn" id="menu-toggle" type="button" data-toggle="collapse" data-target="#">
-                        <img src="img/menu.png" alt="toggle-button" style="height:25px ;">
-                    </button>
-                    <div class="menuitems" id="menu-items">
-                        <a href="#">Home</a>
-                        <a href="#">About</a>
-                        <a href="#">Signup</a>
-                        <a href="#">Login</a>
-                        <a href="#">Profile</a>
-                    </div>
-                </div>
-            </div>
+        <div class="container flex">
+            <a href="index.html" class="site-brand">
+                <img src="img/logo.png">
+            </a>
+            <a href="#" class="signup"><i class="fa-solid fa-user-plus"></i>Signup</a>
+            <span class="vl">|</span>
+            <a href="#" class="login"><i class="fa-solid fa-right-to-bracket"></i>Login</a>
+            <button type="button" id="navbar-show-btn" class="flex">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </nav>
-    <div class="banner">
-        <div class="banner-container">
-            <h3 class="banner-heading" style="color: rgb(234, 235, 236); font-family: Georgia, 'Times New Roman', Times, serif;">One step CLOSER to your DREAM ;)</h3>
-            
+    <header class="flex">
+        <div class="banner">
+            <div class="header-title">
+                <h1>Once step CLOSER to your DREAM ;)</h1>
+                <p>Got the skills but stressing over internships? Relax — we’ve got your back</p>
+                <p>You bring the talent, we’ll bring the internship! it’s a perfect match <i class="fa-regular fa-face-smile-wink"></i></p>
+                <div class="search">
+                <form action="#" class="search-bar">
+                    <input type="text" placeholder="internships near you..." >
+                    <button type="submit">
+                        <a href="#"><i class="fas fa-search"></i></a>
+                    </button>
+                </form>
+            </div>
         </div>
-    </div>
-    <div class="footer"></div>
-    
+            
+            <div class="bg2">
+            <div class="header-form">
+                <h2>Tell us a bit about you, and let's get rolling!</h2>
+                <form class="forms">
+                    <label>City:</label>
+                    <input type="text" class="form-control" placeholder="Enter your city"/><br>
+                    <label>Qualifications</label>
+                    <select class="form-control" >
+                        <option>PG</option>
+                        <option>UG</option>
+                        <option>HSC</option>
+                    </select><br>
+                    <label>Preferred work</label>
+                    <select class="form-control">
+                        <option>Remote</option>
+                        <option>On-site</option>
+                        <option>Hybrid</option>
+                    </select><br>
+                    <label>Period of month</label>
+                    <input type="number" class="form-control" placeholder="months" max="3" min="1"><br>
+
+                    <button type="button" class="btn" value="search">Search</button>
+
+                </form>
+            </div>
+            </div>
+        </div>
+        <div class="navbar-collapse">
+                <button type="button" id="navbar-close-btn" class="flex" style="border: none;">
+                    <i class="fas fa-times"></i>
+                </button>
+                <ul class="navbar-nav">
+                    <li class="nav-items"><i class="fas fa-house"></i>
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-items"><i class="fas fa-user"></i>
+                        <a href="#" class="nav-link">Profile</a>
+                    </li>
+                    <li class="nav-items"><i class="fas fa-heart"></i>
+                        <a href="#" class="nav-link">Your Interests</a>
+                    </li>
+                    <li class="nav-items"><i class="fas fa-address-card"></i>
+                        <a href="#" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-items"><i class="fas fa-comment"></i>
+                        <a href="#" class="nav-link">Need Help?</a>
+                    </li>
+                </ul>
+            </div>
+    </header>
 </body>
 </html>
