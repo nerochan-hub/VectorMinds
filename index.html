@@ -10,6 +10,7 @@
 </head>
 <body>
     <nav class="navbar">
+        
         <div class="container flex">
             <a href="index.html" class="site-brand">
                 <img src="img/logo.png">
@@ -22,9 +23,14 @@
             </button>
         </div>
     </nav>
+    <div class="scroll-down">&#8595;</div>
     <header class="flex">
         <div class="banner">
-            <div class="header-title">
+            <div class="ht">
+                <h2>Finding Internships made easy!</h2>
+                <h3>Fill a Quick form to get curated internships or search for more</h3>
+            </div>
+            <div class="header-title"></div>
                 <h1>Once step CLOSER to your DREAM ;)</h1>
                 <p>Got the skills but stressing over internships? Relax — we’ve got your back</p>
                 <p>You bring the talent, we’ll bring the internship! it’s a perfect match <i class="fa-regular fa-face-smile-wink"></i></p>
@@ -36,6 +42,7 @@
                     </button>
                 </form>
             </div>
+            
         </div>
             
             <div class="bg2">
@@ -88,5 +95,13 @@
                 </ul>
             </div>
     </header>
+    <script>
+  document.querySelector('.scroll-down').addEventListener('click', () => {
+    window.scrollBy({
+      top: window.innerHeight,
+      behavior: 'smooth'
+    });
+  });
+</script>
 </body>
 </html>
