@@ -294,4 +294,10 @@ label {
   .banner h1 {
     font-size: 1.8rem;
   }
+  .header-title{
+    max-height: 100vh;
+  }
+  .bg2{
+    max-height: 100vh;
+  }
 }
