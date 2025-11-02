@@ -16,49 +16,78 @@
                 <a href="index.html" class="site-brand">
                     <img src="img/logo.png">
                 </a>
-                <a href="#" class="signup">
-                    <i class="fa-solid fa-user-plus"></i>Signup
-                </a>
-                <span class="vl">|</span>
-                <a href="#" class="login">
-                    <i class="fa-solid fa-right-to-bracket"></i>Login
-                </a>
-                <button type="button"id="navbar-show-btn" class="flex">
-                    <i class="fas fa-bars"></i>
-                </button>
-            
-                <div class="navbar-collapse" id="navbar-collapse">
-                    <button type="button" id="navbar-close-btn" class="flex" style="border: none;">
-                        <i class="fas fa-times"></i>
-                    </button>
-                    <ul class="navbar-nav">
-                        <li class="nav-items">
-                            <i class="fas fa-house"></i>
-                            <a href="index.html" class="nav-link">Home</a>
-                        </li>
-                        <li class="nav-items">
-                            <i class="fas fa-user"></i>
-                            <a href="#" class="nav-link">Profile</a>
-                        </li>
-                        <li class="nav-items">
-                            <i class="fas fa-heart"></i>
-                            <a href="#" class="nav-link">Your Interests</a>
-                        </li>
-                        <li class="nav-items">
-                            <i class="fas fa-address-card"></i>
-                            <a href="#" class="nav-link">About</a>
-                        </li>
-                        <li class="nav-items">
-                            <i class="fas fa-comment"></i>
-                            <a href="#" class="nav-link">Need Help?</a>
-                        </li>
-                    </ul>
+                <div class="btn-container">
+                    <a href="#" class="signup" id="signupBtn">
+                         <i class="fa-solid fa-user-plus"></i>Signup
+                    </a>
+                    <span class="vl">|</span>
+                    <a href="#" class="login" id="loginBtn">
+                        <i class="fa-solid fa-right-to-bracket"></i>Login
+                    </a>
                 </div>
+            <button type="button"id="navbar-show-btn" class="flex">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="navbar-collapse" id="navbar-collapse">
+                <button type="button" id="navbar-close-btn" class="flex" style="border: none;">
+                    <i class="fas fa-times"></i>
+                </button>
+                <ul class="navbar-nav">
+                    <li class="nav-items">
+                        <i class="fas fa-house"></i>
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-items">
+                        <i class="fas fa-user"></i>
+                        <a href="#" class="nav-link">Profile</a>
+                    </li>
+                    <li class="nav-items">
+                        <i class="fas fa-heart"></i>
+                        <a href="#" class="nav-link">Your Interests</a>
+                    </li>
+                    <li class="nav-items">
+                        <i class="fas fa-address-card"></i>
+                        <a href="#" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-items">
+                        <i class="fas fa-comment"></i>
+                        <a href="#" class="nav-link">Need Help?</a>
+                    </li>
+                </ul>
             </div>
         </nav>
-    
-    
+            
         <div class="banner">
+            <div class="bg">
+            <div class="overlay" id="overlay">
+                    <button class="close-btn" id="closeOverlay">&times;</button>
+                </div>
+            <div class="panel" id="loginPanel">
+                
+                <h2>Login</h2>
+                <input type="email" placeholder="Email" id="loginEmail">
+                <input type="password" placeholder="Password" id="loginPassword">
+                <button>Login</button>
+                <div class="footer">New user? 
+                    <a id="goSignup">Sign up</a>
+                </div>  
+            </div>
+
+                
+                <div class="panel" id="signupPanel">
+                    <h2>Signup</h2>
+                    <input type="text" placeholder="Full Name" id="signupName">
+                    <input type="text" placeholder="Enter your number">
+                    <input type="email" placeholder="Email" id="signupEmail">
+                    <input type="password" placeholder="Password" id="signupPassword">
+                    <button>Signup</button>
+                    <div class="footer">Already a user?
+                        <a id="goLogin">Login</a>
+                    </div>
+                    
+                </div>
+            </div>
+
             <div class="ht">
                 <h2>Finding Internships made easy!</h2>
                 <h3>Fill a Quick form to get curated internships or search for more</h3>
