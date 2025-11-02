@@ -138,6 +138,7 @@
 #navbar-show-btn{
     position: absolute;
     right: 1rem;
+    color: #183153;
     cursor: pointer;
     background: transparent;
     font-size: clamp(1.3rem, 4vw, 2rem);

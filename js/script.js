@@ -37,7 +37,7 @@ const loginBtn = document.getElementById('loginBtn');
     goLogin.addEventListener('click', () => openPanel(loginPanel));
     closeOverlay.addEventListener('click', closePanel);
 
-    // Optional: close when clicking outside the panel
+    
     overlay.addEventListener('click', (e) => {
       if (e.target === overlay) closePanel();
     });
