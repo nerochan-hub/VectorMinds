@@ -27,8 +27,9 @@ const loginBtn = document.getElementById('loginBtn');
 
     function closePanel() {
       overlay.style.display = 'none';
-      loginPanel.classList.remove('active');
       signupPanel.classList.remove('active');
+      loginPanel.classList.remove('active');
+      
     }
 
     loginBtn.addEventListener('click', () => openPanel(loginPanel));
@@ -38,6 +39,6 @@ const loginBtn = document.getElementById('loginBtn');
     closeOverlay.addEventListener('click', closePanel);
 
     
-    overlay.addEventListener('click', (e) => {
-      if (e.target === overlay) closePanel();
-    });
+    overlay.addEventListener('click', function (e) {
+        if (e.target === overlay) closePanel();
+      });
