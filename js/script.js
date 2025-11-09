@@ -47,7 +47,7 @@ document.querySelector('#signupPanel button').addEventListener('click', function
     const email = document.getElementById('signupEmail').value;
     const password = document.getElementById('signupPassword').value;
 
-    fetch('register.php', {
+    fetch('signup.php', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
@@ -84,14 +84,48 @@ document.querySelector('#loginPanel button').addEventListener('click', function(
     overlay.addEventListener('click', function (e) {
         if (e.target === overlay) closePanel();
       });
-async function searchInternships() {
+function searchInternships(event) {
+    event.preventDefault(); 
+    
+    const searchTerm = document.getElementById('searchInput').value;
+
+    if (!searchTerm) {
+        alert("Please enter a search query.");
+        return;
+    }
+
+    
+    const url = `search.php?q=${encodeURIComponent(searchTerm)}`;
+
+    fetch(url)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        if (data.error) {
+            console.error('Search PHP Error:', data.error);
+            return;
+        }     
+        console.log("Search Results:", data);
+ 
+
+    })
+    .catch(error => {
+        console.error('Fetch Error:', error);
+        alert('An unexpected error occurred during the search.');
+    });
+}
+/*async function searchInternships() {
   const query = document.getElementById("searchInput").value.trim();
   if (!query) return alert("Please enter a search term");
 
   const res = await fetch('https://Vector-minds.000webhostapp.com/search.php?q=${encodeURIComponent(query)}');
   const data = await res.json();
   const baseURL = window.location.origin; 
-//const res = await fetch(${baseURL}/search.php?q=${encodeURIComponent(query)});
+
   const resultsDiv = document.getElementById("results");
   resultsDiv.innerHTML = "";
 
@@ -103,14 +137,74 @@ async function searchInternships() {
   data.forEach(intern => {
     const card = document.createElement("div");
     card.innerHTML = `
-      <h3>${intern.role}</h3>
-      <p><strong>Company:</strong> ${intern.company}</p>
-      <p><strong>Location:</strong> ${intern.location}</p>
-      <p><strong>Stipend:</strong> ${intern.stipend}</p>
-      <p><strong>Duration:</strong> ${intern.duration}</p>
+      <h3>${internships.role}</h3>
+      <p><strong>Company:</strong> ${internships.company}</p>
+      <p><strong>Location:</strong> ${internships.location}</p>
+      <p><strong>Stipend:</strong> ${internships.stipend}</p>
+      <p><strong>Duration:</strong> ${internships.duration}</p>
       <p>${intern.description}</p>
       <hr>
     `;
     resultsDiv.appendChild(card);
   });
 }
+
+/*function submitAuthForm(endpoint, data) {
+    
+    const formData = new URLSearchParams();
+    for (const key in data) {
+        formData.append(key, data[key]);
+    }
+    
+    
+    fetch(endpoint, {
+        method: 'POST',
+       
+        body: formData 
+    })
+    .then(res => res.json())
+    .then(result => {
+        alert(result.message);
+        if (result.status === 'success') {
+            closePanel(); 
+        }
+    })
+    .catch(error => {
+        console.error('Fetch Error:', error);
+        alert('A network error occurred.');
+    });
+}
+
+
+document.querySelector('#signupPanel button').addEventListener('click', function() {
+    const fullname = document.getElementById('signupName').value;
+    const number = document.getElementById('signupNumber').value;
+    const email = document.getElementById('signupEmail').value;
+    const password = document.getElementById('signupPassword').value;
+
+    const data = {
+        name: fullname,  
+        number: number,
+        email: email,
+        password: password
+    };
+    
+    
+    submitAuthForm('signup.php', data); 
+    
+});
+
+
+
+document.querySelector('#loginPanel button').addEventListener('click', function() {
+    const email = document.getElementById('loginEmail').value;
+    const password = document.getElementById('loginPassword').value;
+
+    const data = {
+        email: email,
+        password: password
+    };
+
+ 
+    submitAuthForm('login.php', data);
+});
