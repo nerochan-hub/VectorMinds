@@ -2,9 +2,10 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json");
 
+
 //$conn = new mysqli("localhost", "root", "", "internship_db");
 
-$conn = new mysqli("sql111.infinityfree.com", "if0_40370183", "FT45tbTk2bX", "if0_40370183_XXX");
+$conn = new mysqli("sql111.infinityfree.com", "if0_40370183", "FT45tbTk2bX", "if0_40370183_internships");
 
 if ($conn->connect_error) {
     die(json_encode(["error" => $conn->connect_error]));

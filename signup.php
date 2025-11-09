@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $password = $_POST['password'] ?? '';
 
     
-    $conn = new mysqli("localhost", "root", "", "vector_minds");
+    $conn = new mysqli("sql111.infinityfree.com", "if0_40370183", "FT45tbTk2bX", "if0_40370183_register");
 
     if ($conn->connect_error) {
         die(json_encode(["status" => "error", "message" => "Database connection failed."]));

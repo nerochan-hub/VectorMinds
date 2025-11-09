@@ -9,7 +9,8 @@ navbarShowBtn.addEventListener('click',() => {
 navbarCloseBtn.addEventListener('click',() => {
     navbarCollapseDiv.classList.remove('navbar-collapse-rmw');
 });
-const loginBtn = document.getElementById('loginBtn');
+  
+    const loginBtn = document.getElementById('loginBtn');
     const signupBtn = document.getElementById('signupBtn');
     const overlay = document.getElementById('overlay');
     const loginPanel = document.getElementById('loginPanel');
@@ -39,7 +40,47 @@ const loginBtn = document.getElementById('loginBtn');
     goLogin.addEventListener('click', () => openPanel(loginPanel));
     closeOverlay.addEventListener('click', closePanel);
 
+// Signup
+document.querySelector('#signupPanel button').addEventListener('click', function() {
+    const fullname = document.getElementById('signupName').value;
+    const number = document.getElementById('signupNumber').value;
+    const email = document.getElementById('signupEmail').value;
+    const password = document.getElementById('signupPassword').value;
+
+    fetch('register.php', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+            fullname: fullname,
+            number: number,
+            email: email,
+            password: password
+        })
+    })
+    .then(res => res.json())
+    .then(data => {
+        alert(data.message);
+    });
+});
+
+// Login
+document.querySelector('#loginPanel button').addEventListener('click', function() {
+    const email = document.getElementById('loginEmail').value;
+    const password = document.getElementById('loginPassword').value;
+
+    fetch('login.php', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({email: email, password: password})
+    })
+    .then(res => res.json())
+    .then(data => {
+      alert(data.message);
+    });
+});
     
+
+
     overlay.addEventListener('click', function (e) {
         if (e.target === overlay) closePanel();
       });
