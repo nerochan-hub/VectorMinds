@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         die(json_encode(["status" => "error", "message" => "Database connection failed."]));
     }
 
-    $sql = "SELECT * FROM users WHERE email = ?";
+    $sql = "SELECT * FROM signup WHERE email = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $email);
     $stmt->execute();
@@ -24,8 +24,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     } else {
         echo json_encode(["status" => "error", "message" => "User not found."]);
     }
+    
 
     $stmt->close();
     $conn->close();
 }
+
 ?>

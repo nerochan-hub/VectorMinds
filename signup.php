@@ -1,10 +1,17 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $name = $_POST['name'] ?? '';
-    $email = $_POST['email'] ?? '';
-    $password = $_POST['password'] ?? '';
 
+    $json_data = file_get_contents('php://input');
     
+    $data = json_decode($json_data, true); 
+
+    if ($data === null) {
+        die(json_encode(["status" => "error", "message" => "Invalid JSON data received."]));
+    }
+    $name = $data['fullname'] ?? ''; 
+    $number = $data['number'] ?? '';
+    $email = $data['email'] ?? '';
+    $password = $data['password'] ?? '';
     $conn = new mysqli("sql111.infinityfree.com", "if0_40370183", "FT45tbTk2bX", "if0_40370183_register");
 
     if ($conn->connect_error) {
@@ -14,9 +21,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO users (name, email, password) VALUES (?, ?, ?)";
+    $sql = "INSERT INTO signup (name, number, email, password) VALUES (?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sss", $name, $email, $hashedPassword);
+    $stmt->bind_param("sss", $name, $number, $email, $hashedPassword);
 
     if ($stmt->execute()) {
         echo json_encode(["status" => "success", "message" => "Signup successful!"]);
